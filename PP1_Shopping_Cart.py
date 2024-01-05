@@ -8,13 +8,28 @@ item_1 = "1"
 item_2 = "2"
 item_3 = "3"
 
+items = ["MSR Tent", "Lanshan Tent", "Trecking Poles", "Camping Meals"]
+prices = [350, 150, 100, 6]
+quantities = [0, 0, 0, 0]
+
+
+# item_prices = {
+#                 items[0]: 350,    # This dictionary contains the price value for each item on the menu.
+#                 items[1]: 150,    # The keys of the dictionary are set to the corresponding indices of
+#                 items[2]: 100,    # the 'menu' list. The price values are stored next to each key within
+#                 items[3]: 6       # the dictionary.
+#                 }
+
+#                                                    # each item when multiplied by the quantity 
+#                                                     # of that item.
+
 done = False
 while (not done):
     print("\n")
     print("-"*80)
     print("This is your shopping cart: ")
     print("\n")
-    print(cart + "\t" + (str(total)))
+    # print(cart + "\t" + (str(total)))
     print("-"*80)
     print("Would you like to: ")
     print("\n")
@@ -27,9 +42,18 @@ while (not done):
     choice = input("Enter the number of the option you would like to choose: ")
     print("\n")
 
-
+    # User selection 1
+    item_prices = list(zip(items, prices))
+    our_range = "Here is our current range:"
+    
     if choice == "1":
-        print("1. Tent ($500) \n2. Treking Poles ($50) \n3. Camping Meal ($5)")
+        print(our_range, "\n")
+        for i in item_prices:
+            print(i)
+
+        
+        # for count, items, in enumerate(items, start = 1):
+        #     print(count,"-", items)
 
     elif choice =="2":
         #find out item and price and it to cart
