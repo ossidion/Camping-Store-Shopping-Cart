@@ -14,6 +14,21 @@ items = ["MSR Tent", "Lanshan Tent", "Trecking Poles", "Camping Meals"]
 prices = [350, 150, 100, 6]
 quantities = [0, 0, 0, 0]
 
+stock = {items[0]: quantities[0],    # This dictionary contains the stock value for each item on the menu.
+         items[1]: quantities[1],    # The keys of the dictionary are set to the corresponding indices of
+         items[2]: quantities[2],    # the 'menu' list. The stock values are stored next to each key within
+         items[3]: quantities[3]     # the dictionary. 
+        }
+
+price = {items[0]: prices[0],    # This dictionary contains the price value for each item on the menu.
+         items[1]: prices[1],    # The keys of the dictionary are set to the corresponding indices of
+         items[2]: prices[2],  # the 'menu' list. The price values are stored next to each key within
+         items[3]: prices[3]  # the dictionary.
+        }
+
+
+
+
 
 # item_prices = {
 #                 items[0]: 350,    # This dictionary contains the price value for each item on the menu.
@@ -46,14 +61,16 @@ while (not done):
     choice = input("Enter the number of the option you would like to choose: ")
     print("\n")
 
-    # User selection 1
-    item_prices = list(zip(items, prices))
-    our_range = "Here is our current range:"
+    # item_prices = list(zip(items, prices))
     
+    
+    # User selection 1 - items are now enumerated and printed in a user friendly way.
+
     if choice == "1":
-        print(our_range, "\n")
-        for i in item_prices:
-            print(i)
+        our_range = "Here is our current range:"
+        for i, j in enumerate(price, 1):
+            print(f"\n\033[1mProduct {i}\033[0m\n{j}")
+        input("\nPress enter to continue: ")
 
         
         # for count, items, in enumerate(items, start = 1):
@@ -61,6 +78,8 @@ while (not done):
     
     #find out item and price and it to cart
     elif choice =="2":
+
+
         item = input("Which item would you like to add to your cart: ")
         price = float(input("How much does the item cost: $"))
 
