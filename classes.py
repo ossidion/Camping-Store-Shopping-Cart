@@ -1,5 +1,21 @@
 from tabulate import tabulate
 
+"""
+The Item class account for each item that the customer
+chooses to put into their shopping cart. Each instance
+is an item which can be added to the shopping cart. This
+item clsss includes the following methods:
+
+__init__(): which initialises the instance item with a name,
+price, stock count and quantity, which can be used as a 
+counter for the number of this item type the user has within
+their shopping cart.
+
+__str__(): returns a string representation of each Item object.
+This method is called by the built-in print(), str(), and format()
+functions.
+
+"""
 class Item:
     
     def __init__(self, name, price, stock, quantity=0):
