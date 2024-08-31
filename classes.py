@@ -76,6 +76,11 @@ class StockList(Item):
 class ShoppingCart(Item):
     def __init__(self):
         self.shopping_cart = []
+        self.total = []
+
+    def __str__(self, shopping_cart):
+        self.shopping_cart = shopping_cart
+        return self.shopping_cart
 
     def display_shopping_cart(self):
         self.shopping_cart = list(dict.fromkeys(self.shopping_cart))
@@ -87,6 +92,19 @@ class ShoppingCart(Item):
         for i, item in enumerate(self.shopping_cart, 1):
             data.append([i, item.name, item.price, item.quantity])
         print(tabulate(data, headers=headers))
+
+    # Function to look through the object instances which have been added to the shopping cart and
+    # provide a sum total. 
+    def shopping_cart_total(self):
+        total = []
+        for i in self.shopping_cart:
+            total.append(i.price * i.quantity)  # The object instance's prices are stored in a list and multiplied 
+                                                # by each object instance quantity.
+
+        sum_total = 0
+        for i in total:
+            sum_total += i         # The prices are taken from the list and storred as a total integer variable. 
+        return print(f"\nTotal: {sum_total}")
 
         
     def get_item(self, user_index):

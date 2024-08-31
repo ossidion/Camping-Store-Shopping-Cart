@@ -48,6 +48,7 @@ def main():
     while True:
         print("\nYour shopping cart: \n")
         shopping_cart.display_shopping_cart()
+        shopping_cart.shopping_cart_total()
         user_option = input(MENU)
         
         if user_option == "1":
